@@ -1,0 +1,136 @@
+27-03-2024 11:29:11 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:29:11 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:29:11 info: [select query response] : []
+27-03-2024 11:29:11 info: Invalid Token
+27-03-2024 11:30:09 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:30:09 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:30:09 info: [select query response] : []
+27-03-2024 11:30:09 info: Invalid Token
+27-03-2024 11:31:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:31:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:31:08 info: [select query response] : []
+27-03-2024 11:31:08 info: Invalid Token
+27-03-2024 11:32:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:32:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:32:08 info: [select query response] : []
+27-03-2024 11:32:08 info: Invalid Token
+27-03-2024 11:33:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:33:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:33:08 info: [select query response] : []
+27-03-2024 11:33:08 info: Invalid Token
+27-03-2024 11:34:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:34:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:34:08 info: [select query response] : []
+27-03-2024 11:34:08 info: Invalid Token
+27-03-2024 11:35:09 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:35:09 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:35:09 info: [select query response] : []
+27-03-2024 11:35:09 info: Invalid Token
+27-03-2024 11:36:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:36:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:36:08 info: [select query response] : []
+27-03-2024 11:36:08 info: Invalid Token
+27-03-2024 11:37:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:37:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:37:08 info: [select query response] : []
+27-03-2024 11:37:08 info: Invalid Token
+27-03-2024 11:38:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:38:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:38:08 info: [select query response] : []
+27-03-2024 11:38:08 info: Invalid Token
+27-03-2024 11:39:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:39:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:39:08 info: [select query response] : []
+27-03-2024 11:39:08 info: Invalid Token
+27-03-2024 11:40:10 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:40:10 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:40:10 info: [select query response] : []
+27-03-2024 11:40:10 info: Invalid Token
+27-03-2024 11:41:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:41:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:41:08 info: [select query response] : []
+27-03-2024 11:41:08 info: Invalid Token
+27-03-2024 11:42:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:42:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:42:08 info: [select query response] : []
+27-03-2024 11:42:08 info: Invalid Token
+27-03-2024 11:43:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:43:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:43:08 info: [select query response] : []
+27-03-2024 11:43:08 info: Invalid Token
+27-03-2024 11:44:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:44:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:44:08 info: [select query response] : []
+27-03-2024 11:44:08 info: Invalid Token
+27-03-2024 11:45:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:45:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:45:08 info: [select query response] : []
+27-03-2024 11:45:08 info: Invalid Token
+27-03-2024 11:46:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:46:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:46:08 info: [select query response] : []
+27-03-2024 11:46:08 info: Invalid Token
+27-03-2024 11:48:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:48:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:48:08 info: [select query response] : []
+27-03-2024 11:48:08 info: Invalid Token
+27-03-2024 11:49:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:49:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:49:08 info: [select query response] : []
+27-03-2024 11:49:08 info: Invalid Token
+27-03-2024 11:50:10 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:50:10 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:50:10 info: [select query response] : []
+27-03-2024 11:50:10 info: Invalid Token
+27-03-2024 11:51:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:51:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:51:08 info: [select query response] : []
+27-03-2024 11:51:08 info: Invalid Token
+27-03-2024 11:52:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:52:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:52:08 info: [select query response] : []
+27-03-2024 11:52:08 info: Invalid Token
+27-03-2024 11:53:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:53:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:53:08 info: [select query response] : []
+27-03-2024 11:53:08 info: Invalid Token
+27-03-2024 11:54:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:54:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:54:08 info: [select query response] : []
+27-03-2024 11:54:08 info: Invalid Token
+27-03-2024 11:55:09 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:55:10 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:55:10 info: [select query response] : []
+27-03-2024 11:55:10 info: Invalid Token
+27-03-2024 11:56:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:56:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:56:08 info: [select query response] : []
+27-03-2024 11:56:08 info: Invalid Token
+27-03-2024 11:57:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:57:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:57:08 info: [select query response] : []
+27-03-2024 11:57:08 info: Invalid Token
+27-03-2024 11:58:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:58:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:58:08 info: [select query response] : []
+27-03-2024 11:58:08 info: Invalid Token
+27-03-2024 11:59:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 11:59:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 11:59:08 info: [select query response] : []
+27-03-2024 11:59:08 info: Invalid Token
+27-03-2024 12:00:08 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 12:00:08 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 12:00:08 info: [select query response] : []
+27-03-2024 12:00:08 info: Invalid Token
+27-03-2024 13:02:44 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 13:02:44 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 13:02:44 info: [select query response] : []
+27-03-2024 13:02:44 info: Invalid Token
+27-03-2024 13:02:52 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 13:02:52 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 13:02:52 info: [select query response] : []
+27-03-2024 13:02:52 info: Invalid Token
+27-03-2024 13:03:45 info: [Dashboard query parameters] : {"user_id":""}
+27-03-2024 13:03:45 info: [select query request] : SELECT * FROM user_management where bearer_token = 'undefined' AND usr_mgt_status = 'Y' 
+27-03-2024 13:03:45 info: [select query response] : []
+27-03-2024 13:03:45 info: Invalid Token

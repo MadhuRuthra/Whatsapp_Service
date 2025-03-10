@@ -1,0 +1,243 @@
+02-05-2024 07:57:15 info: [ServiceCategoryList query parameters] : {"user_id":""}
+02-05-2024 07:57:15 info: [select query request] : SELECT * FROM message_category where message_category_status = 'Y' ORDER BY message_category_title Asc
+02-05-2024 07:57:15 info: [select query response] : [{"message_category_id":1,"message_category_title":"Automotive","message_category_desc":"Automotive","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":2,"message_category_title":"Beauty, Spa and Salon","message_category_desc":"Beauty, Spa and Salon","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":3,"message_category_title":"Clothing and Apparel","message_category_desc":"Clothing and Apparel","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":4,"message_category_title":"Education","message_category_desc":"Education","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":5,"message_category_title":"Entertainment","message_category_desc":"Entertainment","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":6,"message_category_title":"Event Planning and Service","message_category_desc":"Event Planning and Service","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":7,"message_category_title":"Finance and Banking","message_category_desc":"Finance and Banking","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":8,"message_category_title":"Food and Grocery","message_category_desc":"Food and Grocery","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":10,"message_category_title":"Hotel and Lodging","message_category_desc":"Hotel and Lodging","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":11,"message_category_title":"Medical and Health","message_category_desc":"Medical and Health","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":12,"message_category_title":"Non-profit","message_category_desc":"Non-profit","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":13,"message_category_title":"Professional Services","message_category_desc":"Professional Services","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":9,"message_category_title":"Public Service","message_category_desc":"Public Service","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":14,"message_category_title":"Shopping and Retail","message_category_desc":"Shopping and Retail","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":15,"message_category_title":"Travel and Transportation","message_category_desc":"Travel and Transportation","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"}]
+02-05-2024 09:18:52 info: [LoginTimeList request query parameters] : {"user_id":"7","login_time":""}
+02-05-2024 09:18:52 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:18:52 info: [select query response] : []
+02-05-2024 09:18:52 info: Invalid Token
+02-05-2024 09:18:52 info: [API REQUEST] /list/available_credits - {"user_id":"7"} - {"host":"yourpostman.in:10020","accept":"*/*","accept-encoding":"deflate, gzip","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA","content-type":"application/json","x-forwarded-for":"103.159.85.148","x-forwarded-host":"yourpostman.in","x-forwarded-server":"www.yourpostman.in","connection":"Keep-Alive","content-length":"21"} - 103.159.85.148
+02-05-2024 09:18:52 info: [select query request] : SELECT * FROM user_management WHERE bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status in ('N', 'Y', 'R')
+02-05-2024 09:18:52 info: [select query response] : []
+02-05-2024 09:18:52 info: Invalid Token
+02-05-2024 09:18:52 info: "Request ID" is required
+02-05-2024 09:18:59 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:18:59 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:18:59 info: [select query response] : []
+02-05-2024 09:18:59 info: Invalid Token
+02-05-2024 09:19:59 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:19:59 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:19:59 info: [select query response] : []
+02-05-2024 09:19:59 info: Invalid Token
+02-05-2024 09:20:59 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:20:59 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:20:59 info: [select query response] : []
+02-05-2024 09:20:59 info: Invalid Token
+02-05-2024 09:21:59 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:21:59 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:21:59 info: [select query response] : []
+02-05-2024 09:21:59 info: Invalid Token
+02-05-2024 09:22:59 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:22:59 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:22:59 info: [select query response] : []
+02-05-2024 09:22:59 info: Invalid Token
+02-05-2024 09:24:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:24:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:24:43 info: [select query response] : []
+02-05-2024 09:24:43 info: Invalid Token
+02-05-2024 09:25:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:25:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:25:43 info: [select query response] : []
+02-05-2024 09:25:43 info: Invalid Token
+02-05-2024 09:26:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:26:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:26:43 info: [select query response] : []
+02-05-2024 09:26:43 info: Invalid Token
+02-05-2024 09:27:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:27:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:27:43 info: [select query response] : []
+02-05-2024 09:27:43 info: Invalid Token
+02-05-2024 09:28:45 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:28:45 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:28:45 info: [select query response] : []
+02-05-2024 09:28:45 info: Invalid Token
+02-05-2024 09:29:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:29:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:29:43 info: [select query response] : []
+02-05-2024 09:29:43 info: Invalid Token
+02-05-2024 09:30:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:30:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:30:43 info: [select query response] : []
+02-05-2024 09:30:43 info: Invalid Token
+02-05-2024 09:31:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:31:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:31:43 info: [select query response] : []
+02-05-2024 09:31:43 info: Invalid Token
+02-05-2024 09:32:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:32:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:32:43 info: [select query response] : []
+02-05-2024 09:32:43 info: Invalid Token
+02-05-2024 09:33:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:33:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:33:43 info: [select query response] : []
+02-05-2024 09:33:43 info: Invalid Token
+02-05-2024 09:34:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:34:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:34:43 info: [select query response] : []
+02-05-2024 09:34:43 info: Invalid Token
+02-05-2024 09:35:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:35:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:35:43 info: [select query response] : []
+02-05-2024 09:35:43 info: Invalid Token
+02-05-2024 09:36:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:36:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:36:43 info: [select query response] : []
+02-05-2024 09:36:43 info: Invalid Token
+02-05-2024 09:37:44 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:37:44 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:37:44 info: [select query response] : []
+02-05-2024 09:37:44 info: Invalid Token
+02-05-2024 09:38:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:38:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:38:43 info: [select query response] : []
+02-05-2024 09:38:43 info: Invalid Token
+02-05-2024 09:39:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:39:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:39:43 info: [select query response] : []
+02-05-2024 09:39:43 info: Invalid Token
+02-05-2024 09:40:44 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:40:44 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:40:44 info: [select query response] : []
+02-05-2024 09:40:44 info: Invalid Token
+02-05-2024 09:41:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:41:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:41:43 info: [select query response] : []
+02-05-2024 09:41:43 info: Invalid Token
+02-05-2024 09:42:44 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:42:44 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:42:44 info: [select query response] : []
+02-05-2024 09:42:44 info: Invalid Token
+02-05-2024 09:43:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:43:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:43:43 info: [select query response] : []
+02-05-2024 09:43:43 info: Invalid Token
+02-05-2024 09:44:47 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:44:47 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:44:47 info: [select query response] : []
+02-05-2024 09:44:47 info: Invalid Token
+02-05-2024 09:45:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:45:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:45:43 info: [select query response] : []
+02-05-2024 09:45:43 info: Invalid Token
+02-05-2024 09:46:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:46:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:46:43 info: [select query response] : []
+02-05-2024 09:46:43 info: Invalid Token
+02-05-2024 09:47:44 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:47:44 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:47:44 info: [select query response] : []
+02-05-2024 09:47:44 info: Invalid Token
+02-05-2024 09:48:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:48:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:48:43 info: [select query response] : []
+02-05-2024 09:48:43 info: Invalid Token
+02-05-2024 09:49:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:49:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:49:43 info: [select query response] : []
+02-05-2024 09:49:43 info: Invalid Token
+02-05-2024 09:50:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:50:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:50:43 info: [select query response] : []
+02-05-2024 09:50:43 info: Invalid Token
+02-05-2024 09:51:45 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:51:45 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:51:45 info: [select query response] : []
+02-05-2024 09:51:45 info: Invalid Token
+02-05-2024 09:52:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:52:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:52:43 info: [select query response] : []
+02-05-2024 09:52:43 info: Invalid Token
+02-05-2024 09:53:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:53:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:53:43 info: [select query response] : []
+02-05-2024 09:53:43 info: Invalid Token
+02-05-2024 09:54:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:54:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:54:43 info: [select query response] : []
+02-05-2024 09:54:43 info: Invalid Token
+02-05-2024 09:55:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:55:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:55:42 info: [select query response] : []
+02-05-2024 09:55:42 info: Invalid Token
+02-05-2024 09:56:43 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:56:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:56:43 info: [select query response] : []
+02-05-2024 09:56:43 info: Invalid Token
+02-05-2024 09:57:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:57:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:57:43 info: [select query response] : []
+02-05-2024 09:57:43 info: Invalid Token
+02-05-2024 09:58:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:58:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:58:42 info: [select query response] : []
+02-05-2024 09:58:42 info: Invalid Token
+02-05-2024 09:59:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 09:59:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 09:59:42 info: [select query response] : []
+02-05-2024 09:59:42 info: Invalid Token
+02-05-2024 10:00:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:00:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:00:42 info: [select query response] : []
+02-05-2024 10:00:42 info: Invalid Token
+02-05-2024 10:01:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:01:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:01:42 info: [select query response] : []
+02-05-2024 10:01:42 info: Invalid Token
+02-05-2024 10:02:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:02:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:02:42 info: [select query response] : []
+02-05-2024 10:02:42 info: Invalid Token
+02-05-2024 10:03:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:03:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:03:42 info: [select query response] : []
+02-05-2024 10:03:42 info: Invalid Token
+02-05-2024 10:04:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:04:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:04:42 info: [select query response] : []
+02-05-2024 10:04:42 info: Invalid Token
+02-05-2024 10:05:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:05:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:05:42 info: [select query response] : []
+02-05-2024 10:05:42 info: Invalid Token
+02-05-2024 10:06:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:06:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:06:42 info: [select query response] : []
+02-05-2024 10:06:42 info: Invalid Token
+02-05-2024 10:07:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:07:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:07:42 info: [select query response] : []
+02-05-2024 10:07:42 info: Invalid Token
+02-05-2024 10:08:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:08:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:08:42 info: [select query response] : []
+02-05-2024 10:08:42 info: Invalid Token
+02-05-2024 10:09:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:09:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:09:42 info: [select query response] : []
+02-05-2024 10:09:42 info: Invalid Token
+02-05-2024 10:10:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:10:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:10:42 info: [select query response] : []
+02-05-2024 10:10:42 info: Invalid Token
+02-05-2024 10:11:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:11:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:11:42 info: [select query response] : []
+02-05-2024 10:11:42 info: Invalid Token
+02-05-2024 10:12:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:12:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:12:42 info: [select query response] : []
+02-05-2024 10:12:42 info: Invalid Token
+02-05-2024 10:13:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:13:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:13:42 info: [select query response] : []
+02-05-2024 10:13:42 info: Invalid Token
+02-05-2024 10:14:42 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:14:42 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:14:42 info: [select query response] : []
+02-05-2024 10:14:42 info: Invalid Token
+02-05-2024 10:15:25 info: [Dashboard query parameters] : {"user_id":"7"}
+02-05-2024 10:15:25 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNlbGViX3VzZXIiLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDU3MDQzMywiZXhwIjoxNzE1MTc1MjMzfQ.JtQ0OXEGfRWMbn3T3wMTnkoSSYgW9acuPIq_fwGQGvA' AND usr_mgt_status = 'Y' and user_id = '7' 
+02-05-2024 10:15:25 info: [select query response] : []
+02-05-2024 10:15:25 info: Invalid Token
+02-05-2024 17:12:52 info: [ServiceCategoryList query parameters] : {"user_id":""}
+02-05-2024 17:12:52 info: [select query request] : SELECT * FROM message_category where message_category_status = 'Y' ORDER BY message_category_title Asc
+02-05-2024 17:12:52 info: [select query response] : [{"message_category_id":1,"message_category_title":"Automotive","message_category_desc":"Automotive","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":2,"message_category_title":"Beauty, Spa and Salon","message_category_desc":"Beauty, Spa and Salon","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":3,"message_category_title":"Clothing and Apparel","message_category_desc":"Clothing and Apparel","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":4,"message_category_title":"Education","message_category_desc":"Education","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":5,"message_category_title":"Entertainment","message_category_desc":"Entertainment","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":6,"message_category_title":"Event Planning and Service","message_category_desc":"Event Planning and Service","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":7,"message_category_title":"Finance and Banking","message_category_desc":"Finance and Banking","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":8,"message_category_title":"Food and Grocery","message_category_desc":"Food and Grocery","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":10,"message_category_title":"Hotel and Lodging","message_category_desc":"Hotel and Lodging","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":11,"message_category_title":"Medical and Health","message_category_desc":"Medical and Health","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":12,"message_category_title":"Non-profit","message_category_desc":"Non-profit","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":13,"message_category_title":"Professional Services","message_category_desc":"Professional Services","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":9,"message_category_title":"Public Service","message_category_desc":"Public Service","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":14,"message_category_title":"Shopping and Retail","message_category_desc":"Shopping and Retail","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":15,"message_category_title":"Travel and Transportation","message_category_desc":"Travel and Transportation","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"}]

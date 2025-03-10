@@ -1,0 +1,389 @@
+30-04-2024 09:49:13 info: [API REQUEST] /logout - {"request_id":"_2024121094911_524"} - {"host":"yourpostman.in:10020","accept":"*/*","accept-encoding":"deflate, gzip","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwidXNlcl9wYXNzd29yZCI6IllKdEAxMjMjIiwiaWF0IjoxNzE0NDA0MTcxLCJleHAiOjE3MTUwMDg5NzF9.8qmFg057FOQCanV_QFsDElhjPm-pMINDczmw__wdmWE","content-type":"application/json","x-forwarded-for":"103.159.85.148","x-forwarded-host":"yourpostman.in","x-forwarded-server":"www.yourpostman.in","connection":"Keep-Alive","content-length":"43"} - 103.159.85.148
+30-04-2024 09:49:13 info: [select query request] : SELECT * FROM user_management WHERE bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwidXNlcl9wYXNzd29yZCI6IllKdEAxMjMjIiwiaWF0IjoxNzE0NDA0MTcxLCJleHAiOjE3MTUwMDg5NzF9.8qmFg057FOQCanV_QFsDElhjPm-pMINDczmw__wdmWE' AND usr_mgt_status in ('N', 'Y', 'R')
+30-04-2024 09:49:13 info: [select query response] : []
+30-04-2024 09:49:13 info: Invalid Token
+30-04-2024 09:49:15 info: [ServiceCategoryList query parameters] : {"user_id":""}
+30-04-2024 09:49:15 info: [select query request] : SELECT * FROM message_category where message_category_status = 'Y' ORDER BY message_category_title Asc
+30-04-2024 09:49:15 info: [select query response] : [{"message_category_id":1,"message_category_title":"Automotive","message_category_desc":"Automotive","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":2,"message_category_title":"Beauty, Spa and Salon","message_category_desc":"Beauty, Spa and Salon","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":3,"message_category_title":"Clothing and Apparel","message_category_desc":"Clothing and Apparel","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":4,"message_category_title":"Education","message_category_desc":"Education","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":5,"message_category_title":"Entertainment","message_category_desc":"Entertainment","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":6,"message_category_title":"Event Planning and Service","message_category_desc":"Event Planning and Service","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":7,"message_category_title":"Finance and Banking","message_category_desc":"Finance and Banking","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":8,"message_category_title":"Food and Grocery","message_category_desc":"Food and Grocery","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":10,"message_category_title":"Hotel and Lodging","message_category_desc":"Hotel and Lodging","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":11,"message_category_title":"Medical and Health","message_category_desc":"Medical and Health","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":12,"message_category_title":"Non-profit","message_category_desc":"Non-profit","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":13,"message_category_title":"Professional Services","message_category_desc":"Professional Services","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":9,"message_category_title":"Public Service","message_category_desc":"Public Service","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":14,"message_category_title":"Shopping and Retail","message_category_desc":"Shopping and Retail","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":15,"message_category_title":"Travel and Transportation","message_category_desc":"Travel and Transportation","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"}]
+30-04-2024 09:49:20 info: [insert query request] : INSERT INTO api_log VALUES(NULL,'/login/p_login','103.159.85.148','2024121094919_248','N','-','0000-00-00 00:00:00','Y',CURRENT_TIMESTAMP)
+30-04-2024 09:49:20 info: [insert query response] : {"fieldCount":0,"affectedRows":1,"insertId":1191,"info":"","serverStatus":2,"warningStatus":0}
+30-04-2024 09:49:20 info: [select query request] : SELECT * FROM api_log WHERE request_id = '2024121094919_248' AND response_status != 'N' AND log_status='Y'
+30-04-2024 09:49:20 info: [select query response] : []
+30-04-2024 09:49:20 info: [API REQUEST] /login/p_login - {"txt_username":"primary_admin","txt_password":"Celeb@123#","request_id":"2024121094919_248"} - {"host":"yourpostman.in:10020","accept":"*/*","accept-encoding":"deflate, gzip","content-type":"application/json","x-forwarded-for":"103.159.85.148","x-forwarded-host":"yourpostman.in","x-forwarded-server":"www.yourpostman.in","connection":"Keep-Alive","content-length":"119"} - 103.159.85.148
+30-04-2024 09:49:20 info: [select query request] : SELECT * FROM user_management where login_id = 'primary_admin' and usr_mgt_status in ('N', 'Y', 'R') ORDER BY user_id ASC
+30-04-2024 09:49:20 info: [select query request] : SELECT * FROM user_management where login_id = 'primary_admin' and login_password = 'c5e4408fccd337b1405ae87970edf2b6' and usr_mgt_status in ('N', 'Y', 'R') ORDER BY user_id ASC
+30-04-2024 09:49:20 info: [Update query request] : UPDATE user_management SET bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k' WHERE user_id = '1'
+30-04-2024 09:49:20 info: [Update query Response] : {"fieldCount":0,"affectedRows":1,"insertId":0,"info":"Rows matched: 1  Changed: 1  Warnings: 0","serverStatus":2,"warningStatus":0,"changedRows":1}
+30-04-2024 09:49:20 info: [select query request] : SELECT user_id,user_log_status,login_date FROM user_log where user_id ='1' and user_log_status = 'I' and date(login_date) ='2024-4-30'
+30-04-2024 09:49:20 info: [insert query request] : INSERT INTO user_log VALUES(NULL, '1', '103.159.85.148', '2024-4-30 9:49:20', '2024-4-30 9:49:20', NULL, 'I', '2024-4-30 9:49:20')
+30-04-2024 09:49:20 info: : [call_index_signin] Success 
+30-04-2024 09:49:22 info: [LoginTimeList request query parameters] : {"user_id":"1","login_time":"2024-4-30 9:49:20"}
+30-04-2024 09:49:22 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k' AND usr_mgt_status = 'Y' and user_id = '1' 
+30-04-2024 09:49:22 info: [select query response] : [{"user_id":1,"user_master_id":1,"parent_id":1,"user_name":"primary_admin","user_short_name":"pri","api_key":"AA1DE999B6B65D2","login_id":"primary_admin","login_password":"c5e4408fccd337b1405ae87970edf2b6","user_email":"Vinod@celebdigital.in","user_mobile":"9000090000","user_address":"Hyderabad","user_city":"3617","user_state":"35","user_country":"101","user_permission":"1","usr_mgt_status":"Y","usr_mgt_entry_date":"2021-12-30T11:52:20.000Z","bearer_token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k"}]
+30-04-2024 09:49:22 info: [select query request] : SELECT log.user_log_status FROM user_log log left join user_management usr on usr.user_id = log.user_id where usr.user_id = '1' and usr.api_key = 'AA1DE999B6B65D2' and log.login_time = '2024-4-30 9:49:20'
+30-04-2024 09:49:22 info: [API REQUEST] /list/available_credits - {"user_id":"1"} - {"host":"yourpostman.in:10020","accept":"*/*","accept-encoding":"deflate, gzip","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k","content-type":"application/json","x-forwarded-for":"103.159.85.148","x-forwarded-host":"yourpostman.in","x-forwarded-server":"www.yourpostman.in","connection":"Keep-Alive","content-length":"21"} - 103.159.85.148
+30-04-2024 09:49:22 info: [select query request] : SELECT * FROM user_management WHERE bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k' AND usr_mgt_status in ('N', 'Y', 'R')
+30-04-2024 09:49:22 info: [select query response] : [{"user_id":1,"user_master_id":1,"parent_id":1,"user_name":"primary_admin","user_short_name":"pri","api_key":"AA1DE999B6B65D2","login_id":"primary_admin","login_password":"c5e4408fccd337b1405ae87970edf2b6","user_email":"Vinod@celebdigital.in","user_mobile":"9000090000","user_address":"Hyderabad","user_city":"3617","user_state":"35","user_country":"101","user_permission":"1","usr_mgt_status":"Y","usr_mgt_entry_date":"2021-12-30T11:52:20.000Z","bearer_token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k"}]
+30-04-2024 09:49:22 info: [AvailableCreditsList query parameters] : {"user_id":"1"}
+30-04-2024 09:49:22 info: [select query request] : SELECT lmt.total_messages, sum(lmt.available_messages) available_messages, lmt.expiry_date FROM message_limit lmt left join user_management usr on lmt.user_id = usr.user_id where lmt.message_limit_status = 'Y' and (usr.user_id = '1' or usr.parent_id = '1')
+30-04-2024 09:49:22 info: [select query response] : [{"total_messages":20003,"available_messages":"18250","expiry_date":"2024-08-16T13:58:41.000Z"}]
+30-04-2024 09:49:22 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '1' or usr.parent_id in (1)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:22 info: [select query request] : [{"user_id":1,"user_name":"primary_admin","user_master_id":1,"available_messages":10003},{"user_id":2,"user_name":"admin_1","user_master_id":2,"available_messages":2998},{"user_id":4,"user_name":"admin_2","user_master_id":2,"available_messages":5000},{"user_id":12,"user_name":"neubaby","user_master_id":3,"available_messages":249}]
+30-04-2024 09:49:22 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '2' or usr.parent_id in (2)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:22 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '4' or usr.parent_id in (4)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:22 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '12' or usr.parent_id in (12)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:24 info: "Request ID" is required
+30-04-2024 09:49:27 info: [Dashboard query parameters] : {"user_id":"1"}
+30-04-2024 09:49:27 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k' AND usr_mgt_status = 'Y' and user_id = '1' 
+30-04-2024 09:49:27 info: [select query response] : [{"user_id":1,"user_master_id":1,"parent_id":1,"user_name":"primary_admin","user_short_name":"pri","api_key":"AA1DE999B6B65D2","login_id":"primary_admin","login_password":"c5e4408fccd337b1405ae87970edf2b6","user_email":"Vinod@celebdigital.in","user_mobile":"9000090000","user_address":"Hyderabad","user_city":"3617","user_state":"35","user_country":"101","user_permission":"1","usr_mgt_status":"Y","usr_mgt_entry_date":"2021-12-30T11:52:20.000Z","bearer_token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k"}]
+30-04-2024 09:49:27 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '1' or usr.parent_id in (1)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:27 info: [select query request] : [{"user_id":1,"user_name":"primary_admin","user_master_id":1,"available_messages":10003},{"user_id":2,"user_name":"admin_1","user_master_id":2,"available_messages":2998},{"user_id":4,"user_name":"admin_2","user_master_id":2,"available_messages":5000},{"user_id":12,"user_name":"neubaby","user_master_id":3,"available_messages":249}]
+30-04-2024 09:49:27 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '2' or usr.parent_id in (2)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:27 info: [select query request] : [{"user_id":2,"user_name":"admin_1","user_master_id":2,"available_messages":2998},{"user_id":3,"user_name":"dept_head_1","user_master_id":3,"available_messages":804},{"user_id":5,"user_name":"waba_user_2","user_master_id":3,"available_messages":9137261}]
+30-04-2024 09:49:27 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '4' or usr.parent_id in (4)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:27 info: [select query request] : [{"user_id":4,"user_name":"admin_2","user_master_id":2,"available_messages":5000}]
+30-04-2024 09:49:27 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '12' or usr.parent_id in (12)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:27 info: [select query request] : [{"user_id":12,"user_name":"neubaby","user_master_id":3,"available_messages":249}]
+30-04-2024 09:49:27 info: [select query request] : SELECT 
+    wht.user_id,
+    wht.store_id,
+    usr.user_name,
+    ussr.user_type,
+    wht.whatsapp_entry_date,
+    ml.available_messages,
+    DATE_FORMAT(wht.whatsapp_entry_date,'%d-%m-%Y') entry_date,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' THEN 1 END) AS total_msg,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' THEN 1 END) AS total_success,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' AND stt.delivery_status = 'Y' THEN 1 END) AS total_delivered,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' AND stt.read_status = 'Y' THEN 1 END) AS total_read,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'F' THEN 1 END) AS total_failed,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'I' THEN 1 END) AS total_invalid,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND (stt.response_status NOT IN ('I', 'F', 'S') OR stt.response_status IS NULL) THEN 1 END) AS total_waiting 
+FROM 
+    whatsapp_messenger_1.compose_whatsapp_tmpl_1 wht 
+LEFT JOIN 
+    whatsapp_messenger_1.compose_whatsapp_status_tmpl_1 stt ON wht.compose_whatsapp_id = stt.compose_whatsapp_id 
+LEFT JOIN 
+    whatsapp_messenger.user_management usr ON wht.user_id = usr.user_id 
+LEFT JOIN 
+    whatsapp_messenger.message_limit ml ON wht.user_id = ml.user_id 
+LEFT JOIN 
+    whatsapp_messenger.user_master ussr ON usr.user_master_id = ussr.user_master_id 
+WHERE 
+    usr.user_id = '1' 
+    AND (DATE(wht.whatsapp_entry_date) BETWEEN '2024-4-30' AND '2024-4-30') group by ums.user_master_id, date(wht.whatsapp_entry_date) order by user_master_id, user_name, entry_date desc 
+30-04-2024 09:49:27 info: [select query request] : SELECT 
+    wht.user_id,
+    wht.store_id,
+    usr.user_name,
+    ussr.user_type,
+    wht.whatsapp_entry_date,
+    ml.available_messages,
+    DATE_FORMAT(wht.whatsapp_entry_date,'%d-%m-%Y') entry_date,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' THEN 1 END) AS total_msg,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' THEN 1 END) AS total_success,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' AND stt.delivery_status = 'Y' THEN 1 END) AS total_delivered,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' AND stt.read_status = 'Y' THEN 1 END) AS total_read,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'F' THEN 1 END) AS total_failed,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'I' THEN 1 END) AS total_invalid,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND (stt.response_status NOT IN ('I', 'F', 'S') OR stt.response_status IS NULL) THEN 1 END) AS total_waiting 
+FROM 
+    whatsapp_messenger_2.compose_whatsapp_tmpl_2 wht 
+LEFT JOIN 
+    whatsapp_messenger_2.compose_whatsapp_status_tmpl_2 stt ON wht.compose_whatsapp_id = stt.compose_whatsapp_id 
+LEFT JOIN 
+    whatsapp_messenger.user_management usr ON wht.user_id = usr.user_id 
+LEFT JOIN 
+    whatsapp_messenger.message_limit ml ON wht.user_id = ml.user_id 
+LEFT JOIN 
+    whatsapp_messenger.user_master ussr ON usr.user_master_id = ussr.user_master_id 
+WHERE 
+    usr.user_id = '2' 
+    AND (DATE(wht.whatsapp_entry_date) BETWEEN '2024-4-30' AND '2024-4-30') group by ums.user_master_id, date(wht.whatsapp_entry_date) order by user_master_id, user_name, entry_date desc 
+30-04-2024 09:49:27 info: [select query request] : SELECT 
+    wht.user_id,
+    wht.store_id,
+    usr.user_name,
+    ussr.user_type,
+    wht.whatsapp_entry_date,
+    ml.available_messages,
+    DATE_FORMAT(wht.whatsapp_entry_date,'%d-%m-%Y') entry_date,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' THEN 1 END) AS total_msg,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' THEN 1 END) AS total_success,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' AND stt.delivery_status = 'Y' THEN 1 END) AS total_delivered,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' AND stt.read_status = 'Y' THEN 1 END) AS total_read,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'F' THEN 1 END) AS total_failed,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'I' THEN 1 END) AS total_invalid,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND (stt.response_status NOT IN ('I', 'F', 'S') OR stt.response_status IS NULL) THEN 1 END) AS total_waiting 
+FROM 
+    whatsapp_messenger_4.compose_whatsapp_tmpl_4 wht 
+LEFT JOIN 
+    whatsapp_messenger_4.compose_whatsapp_status_tmpl_4 stt ON wht.compose_whatsapp_id = stt.compose_whatsapp_id 
+LEFT JOIN 
+    whatsapp_messenger.user_management usr ON wht.user_id = usr.user_id 
+LEFT JOIN 
+    whatsapp_messenger.message_limit ml ON wht.user_id = ml.user_id 
+LEFT JOIN 
+    whatsapp_messenger.user_master ussr ON usr.user_master_id = ussr.user_master_id 
+WHERE 
+    usr.user_id = '4' 
+    AND (DATE(wht.whatsapp_entry_date) BETWEEN '2024-4-30' AND '2024-4-30') group by ums.user_master_id, date(wht.whatsapp_entry_date) order by user_master_id, user_name, entry_date desc 
+30-04-2024 09:49:27 info: [select query request] : SELECT 
+    wht.user_id,
+    wht.store_id,
+    usr.user_name,
+    ussr.user_type,
+    wht.whatsapp_entry_date,
+    ml.available_messages,
+    DATE_FORMAT(wht.whatsapp_entry_date,'%d-%m-%Y') entry_date,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' THEN 1 END) AS total_msg,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' THEN 1 END) AS total_success,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' AND stt.delivery_status = 'Y' THEN 1 END) AS total_delivered,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'S' AND stt.read_status = 'Y' THEN 1 END) AS total_read,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'F' THEN 1 END) AS total_failed,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND stt.response_status = 'I' THEN 1 END) AS total_invalid,
+    COUNT(CASE WHEN DATE(stt.comwtap_entry_date) BETWEEN '2024-4-30' AND '2024-4-30' AND (stt.response_status NOT IN ('I', 'F', 'S') OR stt.response_status IS NULL) THEN 1 END) AS total_waiting 
+FROM 
+    whatsapp_messenger_12.compose_whatsapp_tmpl_12 wht 
+LEFT JOIN 
+    whatsapp_messenger_12.compose_whatsapp_status_tmpl_12 stt ON wht.compose_whatsapp_id = stt.compose_whatsapp_id 
+LEFT JOIN 
+    whatsapp_messenger.user_management usr ON wht.user_id = usr.user_id 
+LEFT JOIN 
+    whatsapp_messenger.message_limit ml ON wht.user_id = ml.user_id 
+LEFT JOIN 
+    whatsapp_messenger.user_master ussr ON usr.user_master_id = ussr.user_master_id 
+WHERE 
+    usr.user_id = '12' 
+    AND (DATE(wht.whatsapp_entry_date) BETWEEN '2024-4-30' AND '2024-4-30') group by ums.user_master_id, date(wht.whatsapp_entry_date) order by user_master_id, user_name, entry_date desc 
+30-04-2024 09:49:43 info: [LoginTimeList request query parameters] : {"user_id":"1","login_time":"2024-4-30 9:49:20"}
+30-04-2024 09:49:43 info: [select query request] : SELECT * FROM user_management where bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k' AND usr_mgt_status = 'Y' and user_id = '1' 
+30-04-2024 09:49:43 info: [select query response] : [{"user_id":1,"user_master_id":1,"parent_id":1,"user_name":"primary_admin","user_short_name":"pri","api_key":"AA1DE999B6B65D2","login_id":"primary_admin","login_password":"c5e4408fccd337b1405ae87970edf2b6","user_email":"Vinod@celebdigital.in","user_mobile":"9000090000","user_address":"Hyderabad","user_city":"3617","user_state":"35","user_country":"101","user_permission":"1","usr_mgt_status":"Y","usr_mgt_entry_date":"2021-12-30T11:52:20.000Z","bearer_token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k"}]
+30-04-2024 09:49:43 info: [select query request] : SELECT log.user_log_status FROM user_log log left join user_management usr on usr.user_id = log.user_id where usr.user_id = '1' and usr.api_key = 'AA1DE999B6B65D2' and log.login_time = '2024-4-30 9:49:20'
+30-04-2024 09:49:44 info: [API REQUEST] /list/available_credits - {"user_id":"1"} - {"host":"yourpostman.in:10020","accept":"*/*","accept-encoding":"deflate, gzip","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k","content-type":"application/json","x-forwarded-for":"103.159.85.148","x-forwarded-host":"yourpostman.in","x-forwarded-server":"www.yourpostman.in","connection":"Keep-Alive","content-length":"21"} - 103.159.85.148
+30-04-2024 09:49:44 info: [select query request] : SELECT * FROM user_management WHERE bearer_token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k' AND usr_mgt_status in ('N', 'Y', 'R')
+30-04-2024 09:49:44 info: [select query response] : [{"user_id":1,"user_master_id":1,"parent_id":1,"user_name":"primary_admin","user_short_name":"pri","api_key":"AA1DE999B6B65D2","login_id":"primary_admin","login_password":"c5e4408fccd337b1405ae87970edf2b6","user_email":"Vinod@celebdigital.in","user_mobile":"9000090000","user_address":"Hyderabad","user_city":"3617","user_state":"35","user_country":"101","user_permission":"1","usr_mgt_status":"Y","usr_mgt_entry_date":"2021-12-30T11:52:20.000Z","bearer_token":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InByaW1hcnlfYWRtaW4iLCJ1c2VyX3Bhc3N3b3JkIjoiQ2VsZWJAMTIzIyIsImlhdCI6MTcxNDQ1MDc2MCwiZXhwIjoxNzE1MDU1NTYwfQ.MlXBwzqiSG8V7yj0Tg2LtuGEHuJ8_AYdheCD-mqrJ8k"}]
+30-04-2024 09:49:44 info: [AvailableCreditsList query parameters] : {"user_id":"1"}
+30-04-2024 09:49:44 info: [select query request] : SELECT lmt.total_messages, sum(lmt.available_messages) available_messages, lmt.expiry_date FROM message_limit lmt left join user_management usr on lmt.user_id = usr.user_id where lmt.message_limit_status = 'Y' and (usr.user_id = '1' or usr.parent_id = '1')
+30-04-2024 09:49:44 info: [select query response] : [{"total_messages":20003,"available_messages":"18250","expiry_date":"2024-08-16T13:58:41.000Z"}]
+30-04-2024 09:49:44 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '1' or usr.parent_id in (1)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:44 info: [select query request] : [{"user_id":1,"user_name":"primary_admin","user_master_id":1,"available_messages":10003},{"user_id":2,"user_name":"admin_1","user_master_id":2,"available_messages":2998},{"user_id":4,"user_name":"admin_2","user_master_id":2,"available_messages":5000},{"user_id":12,"user_name":"neubaby","user_master_id":3,"available_messages":249}]
+30-04-2024 09:49:44 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '2' or usr.parent_id in (2)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:44 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '4' or usr.parent_id in (4)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:44 info: [select query request] : SELECT usr.user_id, usr.user_name, usr.user_master_id, lmt.available_messages FROM user_management usr left join message_limit lmt on usr.user_id = lmt.user_id where (usr.user_id = '12' or usr.parent_id in (12)) and usr.usr_mgt_status = 'Y' order by usr.user_master_id, usr.user_id asc
+30-04-2024 09:49:45 info: "Request ID" is required
+30-04-2024 09:49:51 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 09:49:51 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 09:54:52 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 09:54:52 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 09:59:50 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 09:59:50 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:04:51 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:04:51 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:09:50 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:09:50 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:15:04 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:15:04 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:20:02 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:20:02 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:25:04 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:25:04 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:30:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:30:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:35:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:35:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:40:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:40:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:45:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:45:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:50:08 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:50:08 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 10:55:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 10:55:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:00:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:00:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:05:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:05:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:10:02 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:10:02 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:15:05 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:15:05 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:20:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:20:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:25:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:25:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:30:07 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:30:07 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:35:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:35:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:40:04 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:40:04 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:45:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:45:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:50:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:50:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 11:55:04 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 11:55:04 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:00:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:00:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:05:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:05:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:10:03 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:10:03 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:15:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:15:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:25:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:25:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:30:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:30:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:35:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:35:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:40:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:40:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:45:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:45:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:50:00 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:50:00 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 12:55:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 12:55:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 13:00:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 13:00:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 13:05:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 13:05:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 13:10:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 13:10:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 13:15:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 13:15:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 13:20:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 13:20:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 13:25:01 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 13:25:01 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 13:30:00 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 13:30:00 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 14:34:30 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 14:34:30 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 14:39:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 14:39:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 14:44:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 14:44:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 14:49:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 14:49:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 14:54:34 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 14:54:34 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 14:59:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 14:59:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:04:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:04:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:09:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:09:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:14:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:14:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:19:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:19:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:24:31 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:24:31 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:29:29 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:29:29 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:34:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:34:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:39:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:39:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:44:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:44:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:49:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:49:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:54:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:54:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 15:59:28 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 15:59:28 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:10:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:10:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:15:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:15:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:20:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:20:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:25:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:25:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:30:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:30:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:35:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:35:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:40:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:40:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:45:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:45:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:50:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:50:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 16:55:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 16:55:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:00:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:00:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:05:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:05:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:10:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:10:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:15:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:15:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:20:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:20:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:25:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:25:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:30:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:30:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:35:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:35:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:40:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:40:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:45:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:45:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:50:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:50:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 17:55:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 17:55:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:00:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:00:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:05:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:05:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:10:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:10:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:15:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:15:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:20:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:20:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:25:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:25:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:28:00 info: [ServiceCategoryList query parameters] : {"user_id":""}
+30-04-2024 18:28:00 info: [select query request] : SELECT * FROM message_category where message_category_status = 'Y' ORDER BY message_category_title Asc
+30-04-2024 18:28:00 info: [select query response] : [{"message_category_id":1,"message_category_title":"Automotive","message_category_desc":"Automotive","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":2,"message_category_title":"Beauty, Spa and Salon","message_category_desc":"Beauty, Spa and Salon","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":3,"message_category_title":"Clothing and Apparel","message_category_desc":"Clothing and Apparel","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":4,"message_category_title":"Education","message_category_desc":"Education","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":5,"message_category_title":"Entertainment","message_category_desc":"Entertainment","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":6,"message_category_title":"Event Planning and Service","message_category_desc":"Event Planning and Service","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":7,"message_category_title":"Finance and Banking","message_category_desc":"Finance and Banking","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":8,"message_category_title":"Food and Grocery","message_category_desc":"Food and Grocery","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":10,"message_category_title":"Hotel and Lodging","message_category_desc":"Hotel and Lodging","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":11,"message_category_title":"Medical and Health","message_category_desc":"Medical and Health","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":12,"message_category_title":"Non-profit","message_category_desc":"Non-profit","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":13,"message_category_title":"Professional Services","message_category_desc":"Professional Services","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":9,"message_category_title":"Public Service","message_category_desc":"Public Service","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":14,"message_category_title":"Shopping and Retail","message_category_desc":"Shopping and Retail","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"},{"message_category_id":15,"message_category_title":"Travel and Transportation","message_category_desc":"Travel and Transportation","message_category_status":"Y","message_category_entdate":"2023-03-01T06:57:50.000Z"}]
+30-04-2024 18:30:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:30:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:35:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:35:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:40:16 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:40:16 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:48:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:48:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:53:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:53:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 18:58:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 18:58:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:03:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:03:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:08:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:08:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:13:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:13:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:18:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:18:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:22:58 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:22:58 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:28:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:28:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:33:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:33:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:38:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:38:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:43:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:43:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]
+30-04-2024 19:48:10 info: [select query request] : SELECT user_name, user_mail, user_mobileno, entry_date, user_status FROM feedback_entry where user_form_type = 'partner_form'
+30-04-2024 19:48:10 info: [select query response] : [{"user_name":"Arun","user_mail":"arun@ga.com","user_mobileno":"9090909090","entry_date":"2023-11-14T04:57:08.000Z","user_status":"Y"}]

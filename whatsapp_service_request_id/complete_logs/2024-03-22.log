@@ -1,0 +1,6 @@
+22-03-2024 18:10:04 info:  Incoming webhook: {"entry":[{"id":"247606498440632","time":1711111202,"changes":[{"value":{"display_phone_number":"916381778162","decision":"REJECTED","requested_verified_name":"Neubaby","rejection_reason":"NAME_NOT_CONSISTENT"},"field":"phone_number_name_update"}]}],"object":"whatsapp_business_account"}
+22-03-2024 18:10:04 info:  [display name rejected] : REJECTED - 916381778162
+22-03-2024 18:36:47 info:  Incoming webhook: {"entry":[{"id":"247606498440632","time":1711112805,"changes":[{"value":{"display_phone_number":"916381778162","decision":"APPROVED","requested_verified_name":"Neubaby Fashions","rejection_reason":"NONE"},"field":"phone_number_name_update"}]}],"object":"whatsapp_business_account"}
+22-03-2024 18:36:47 info:  [update query request] : UPDATE whatsapp_config SET available_credit = 900 WHERE concat(con.country_code, con.mobile_no) = '916381778162'
+22-03-2024 18:36:47 info:  [receive message failed response] : Error: Unknown column 'con.country_code' in 'where clause'
+22-03-2024 18:36:48 info:  Incoming webhook: {"entry":[{"id":"109090368950881","time":1711112806,"changes":[{"value":{"display_phone_number":"15551286398","event":"ONBOARDING","current_limit":"TIER_1K","old_limit":"TIER_NOT_SET"},"field":"phone_number_quality_update"}]}],"object":"whatsapp_business_account"}
