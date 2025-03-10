@@ -1,0 +1,6 @@
+Messenger Response List Page : User : apdcl_viral executed the Query reponse ({"response_code":1,"response_status":204,"response_msg":"No data available"}) on 2024-11-05 11:58:01
+Compose Whatsapp - Validate Campaign Page : User : apdcl_viral executed the query ({
+      "template_id" : "tmplt_apdcl1_132_039"
+  }) on 2024-11-05 12:14:59
+Compose Whatsapp - Validate Campaign Page : User : apdcl_viral executed the query response ({"response_code":1,"response_status":200,"response_msg":"Success","data":[{"whatspp_config_id":13,"sent_count":0,"available_credit":200,"user_id":2,"store_id":1,"country_code":91,"mobile_no":"9632587419","qr_code_allowed":"A","phone_number_id":"786957643214256","whatsapp_business_acc_id":"786957643214256","bearer_token":"assd123"}]}) on 2024-11-05 12:14:59
+Messenger Response List Page : User : apdcl_viral executed the Query reponse ({"response_code":1,"response_status":204,"response_msg":"No data available"}) on 2024-11-05 12:15:13

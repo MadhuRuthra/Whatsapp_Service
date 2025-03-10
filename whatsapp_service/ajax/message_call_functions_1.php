@@ -1,0 +1,846 @@
+<?php
+session_start();//start session
+error_reporting(E_ALL);// The error reporting function
+// Include configuration.php
+include_once('../api/configuration.php');
+// include sitecommon functions
+include_once('site_common_functions.php');
+extract($_REQUEST);
+$bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].''; 
+$current_date = date("Y-m-d H:i:s");
+$milliseconds = round(microtime(true) * 1000);
+
+// Compose Whatsapp Page validateMobno - Start
+if (isset($_POST['validateMobno']) == "validateMobno") {
+  $mobno = str_replace('"', '', htmlspecialchars(strip_tags(isset($_POST['mobno']) ? $conn->real_escape_string($_POST['mobno']) : "")));
+  $dup   = htmlspecialchars(strip_tags(isset($_POST['dup']) ? $conn->real_escape_string($_POST['dup']) : ""));
+  $inv   = htmlspecialchars(strip_tags(isset($_POST['inv']) ? $conn->real_escape_string($_POST['inv']) : ""));
+
+  $mobno = str_replace('\n', ',', $mobno);
+  $newline = explode('\n', $mobno); 
+  // validate the mobile numbers
+  $correct_mobno_data = [];
+  $return_mobno_data = '';
+  $issu_mob = '';
+  $cnt_vld_no = 0;
+  $max_vld_no = 1000;
+  for ($i=0; $i < count($newline); $i++) { 
+    $expl = explode(",", $newline[$i]);
+
+      for ($ij=0; $ij < count($expl); $ij++) { 
+          
+          if($inv == 1) {
+              $vlno = validate_phone_number($expl[$ij]);
+          } else {
+              $vlno = $newline[$i];
+          }
+
+          if($vlno == true) {
+              if($dup == 1) {
+                  if(!in_array($expl[$ij], $correct_mobno_data)) {
+                      if($expl[$ij] != '') {
+                          $cnt_vld_no++;
+                          if($cnt_vld_no <= $max_vld_no) {
+                            $correct_mobno_data[] = $expl[$ij];
+                            $return_mobno_data .= $expl[$ij].",\n";
+                          } else {
+                            $issu_mob .= $expl[$ij].",";
+                          }
+                      } else {
+                          $issu_mob .= $expl[$ij].",";
+                      }
+                  } else {
+                      $issu_mob .= $expl[$ij].",";
+                  }
+              } else {
+                  if($expl[$ij] != '') {
+                      $cnt_vld_no++;
+                      if($cnt_vld_no <= $max_vld_no) {
+                        $correct_mobno_data[] = $expl[$ij];
+                        $return_mobno_data .= $expl[$ij].",\n";
+                      } else {
+                        $issu_mob .= $expl[$ij].", ";
+                      }
+                  } else {
+                      $issu_mob .= $expl[$ij].", ";
+                  }
+              }
+          } else {
+              $issu_mob .= $expl[$ij].",";
+          }
+      }
+  }
+  
+  $return_mobno_data = rtrim($return_mobno_data, ",\n");
+  site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." validated Mobile Nos ($return_mobno_data||$issu_mob) on ".date("Y-m-d H:i:s"), '../');
+  $json = array("status" => 1, "msg" => $return_mobno_data."||".$issu_mob);
+}
+// Compose Whatsapp Page validateMobno - End
+
+// Compose Whatsapp Page delete_senderid - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "delete_senderid") {
+  $whatspp_config_id1		= htmlspecialchars(strip_tags(isset($_REQUEST['whatspp_config_id']) ? $conn->real_escape_string($_REQUEST['whatspp_config_id']) : ""));
+  $approve_status1  		= htmlspecialchars(strip_tags(isset($_REQUEST['approve_status']) ? $conn->real_escape_string($_REQUEST['approve_status']) : ""));
+
+  $replace_txt = '{
+    "user_id" : "'.$_SESSION['yjwatsp_user_id'].'",
+    "whatspp_config_id" : "'.$whatspp_config_id1.'"
+  }';
+    // To Get Api URL
+  $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].'';  
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => $api_url.'/sender_id/delete_sender_id',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'DELETE',
+    CURLOPT_POSTFIELDS =>$replace_txt,
+    CURLOPT_HTTPHEADER => array(
+      $bearer_token,
+      'Content-Type: application/json'
+     
+    ),
+  ));
+  site_log_generate("Compose Whatsapp Delete Sender ID Page : ".$_SESSION['yjwatsp_user_name']." Execute the service [$replace_txt] on ".date("Y-m-d H:i:s"), '../');
+  $response = curl_exec($curl);
+  curl_close($curl);
+  
+  $header = json_decode($response, false);
+  site_log_generate("Compose Whatsapp Delete Sender ID Page : ".$_SESSION['yjwatsp_user_name']." get the Service response [$response] on ".date("Y-m-d H:i:s"), '../');
+  
+  if ($header->response_code == 1) {
+    $json = array("status" => 1, "msg" => $header->response_msg);
+  } else {
+    $json = array("status" => 0, "msg" => "Failed");
+  }
+}
+// Compose Whatsapp Page delete_senderid - Start
+
+// Compose Whatsapp Page generate_contacts - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "generate_contacts") {
+  $txt_list_mobno		= htmlspecialchars(strip_tags(isset($_REQUEST['txt_list_mobno']) ? $conn->real_escape_string($_REQUEST['txt_list_mobno']) : ""));
+
+  $expld = explode(",", $txt_list_mobno);
+  $mblno = '';
+  for($i = 0; $i < count($expld); $i++) {
+    $mblno .= '"'.$expld[$i].'", ';
+  }
+  $mblno = rtrim($mblno, ", ");
+
+  $replace_txt = '{
+    "mobile_number" : ['.$mblno.']
+  }';
+    // To Get Api URL
+  $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].'';  
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => $api_url.'/create_csv',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS =>$replace_txt,
+    CURLOPT_HTTPHEADER => array(
+      $bearer_token,
+      'Content-Type: application/json'
+     
+    ),
+  ));
+  site_log_generate("Compose Whatsapp Generate Contacts Page : ".$_SESSION['yjwatsp_user_name']." Execute the service [$replace_txt] on ".date("Y-m-d H:i:s"), '../');
+  $response = curl_exec($curl);
+  curl_close($curl);
+  
+  $header = json_decode($response, false);
+  site_log_generate("Compose Whatsapp Generate Contacts Page : ".$_SESSION['yjwatsp_user_name']." get the Service response [$response] on ".date("Y-m-d H:i:s"), '../');
+  
+  if ($header->response_code == 1) {
+    $json = array("status" => 1, "msg" => $site_url.$header->file_location);
+  } else {
+    $json = array("status" => 0, "msg" => "Failed to Generate Contact CSV. Kindly try again!!");
+  }
+}
+// Compose Whatsapp Page generate_contacts - Start
+
+// Approve Page save_phbabt - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "save_phbabt") {
+  $whatspp_config_id		= htmlspecialchars(strip_tags(isset($_REQUEST['whatspp_config_id']) ? $conn->real_escape_string($_REQUEST['whatspp_config_id']) : ""));
+  $fieldname  		= htmlspecialchars(strip_tags(isset($_REQUEST['fieldname']) ? $conn->real_escape_string($_REQUEST['fieldname']) : ""));
+  $fieldvalue  		= htmlspecialchars(strip_tags(isset($_REQUEST['fieldvalue']) ? $conn->real_escape_string($_REQUEST['fieldvalue']) : ""));
+  $whatspp_config_id1		= htmlspecialchars(strip_tags(isset($_REQUEST['whatspp_config_id']) ? $conn->real_escape_string($_REQUEST['whatspp_config_id']) : ""));
+  $approve_status1  		= htmlspecialchars(strip_tags(isset($_REQUEST['approve_status']) ? $conn->real_escape_string($_REQUEST['approve_status']) : ""));
+  $phone_number_id		= htmlspecialchars(strip_tags(isset($_REQUEST['phone_number_id']) ? $conn->real_escape_string($_REQUEST['phone_number_id']) : ""));
+  $whatsapp_business_acc_id  		= htmlspecialchars(strip_tags(isset($_REQUEST['whatsapp_business_acc_id']) ? $conn->real_escape_string($_REQUEST['whatsapp_business_acc_id']) : ""));
+  $bearer_token_value		= htmlspecialchars(strip_tags(isset($_REQUEST['bearer_token_value']) ? $conn->real_escape_string($_REQUEST['bearer_token_value']) : ""));
+  $mobile_no  		= htmlspecialchars(strip_tags(isset($_REQUEST['mobile_number']) ? $conn->real_escape_string($_REQUEST['mobile_number']) : ""));
+    // To Get Api URL
+  $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].'';  
+  $curl = curl_init();  // To Get Api URL
+      curl_setopt_array($curl, array(
+        CURLOPT_URL =>$api_url."/approve_user",
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+          "user_id":"'.$_SESSION['yjwatsp_user_id'].'",
+          "mobile_number": "'.$mobile_no.'",
+          "phone_number_id": "'.$phone_number_id.'",
+          "whatsapp_business_acc_id": "'.$whatsapp_business_acc_id.'",
+          "bearer_token": "'.$bearer_token_value.'"
+        }',
+        CURLOPT_HTTPHEADER => array(
+          $bearer_token,
+          'Content-Type: application/json'
+        ),
+      ));
+  
+  $usr = '{
+    "user_id":"'.$_SESSION['yjwatsp_user_id'].'",
+    "mobile_number": "'.$mobile_no.'",
+    "phone_number_id": "'.$phone_number_id.'",
+    "whatsapp_business_acc_id": "'.$whatsapp_business_acc_id.'",
+    "bearer_token": "'.$bearer_token_value.'"
+  }';
+  site_log_generate("Approve Whatsappno Page : ".$_SESSION['yjwatsp_user_name']." executed the query API ($usr) on ".date("Y-m-d H:i:s"), '../'); 
+  $response = curl_exec($curl);
+  curl_close($curl);
+  $yjresponseobj = json_decode($response, false);
+
+  site_log_generate("Approve Whatsappno Page : ".$_SESSION['yjwatsp_user_name']." executed the query API response ($response) on ".date("Y-m-d H:i:s"), '../'); 
+  if($yjresponseobj->response_msg == 'Error occurred'){
+    $json = array("status" => 2, "msg" => "Save option Failed!!. Must fill all fields!!" );
+  }
+    else{
+  $json = array("status" => 1, "msg" =>  $yjresponseobj->reponse_msg );
+  }
+}
+// Approve Page save_phbabt - Start
+
+// Compose Whatsapp Page approve_template - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "approve_template") {
+  $template_id1			= htmlspecialchars(strip_tags(isset($_REQUEST['template_id']) ? $conn->real_escape_string($_REQUEST['template_id']) : ""));
+  $approve_status1	= htmlspecialchars(strip_tags(isset($_REQUEST['approve_status']) ? $conn->real_escape_string($_REQUEST['approve_status']) : ""));
+  
+  $replace_txt = '{
+    "user_id" : "'.$_SESSION['yjwatsp_user_id'].'",
+    "change_status" : "'.$approve_status1.'",
+    "template_id" : "'.$template_id1.'"
+  }';
+    // To Get Api URL
+  $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].'';  
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => $api_url.'/template/approve_reject_template',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS =>$replace_txt,
+    CURLOPT_HTTPHEADER => array(
+      $bearer_token,
+      'Content-Type: application/json'
+     
+    ),
+  ));
+
+  site_log_generate("Compose Whatsapp approve_template Page : ".$_SESSION['yjwatsp_user_name']." Execute the service [$replace_txt] on ".date("Y-m-d H:i:s"), '../');
+  $response = curl_exec($curl);
+  curl_close($curl);
+  
+  $header = json_decode($response, false);
+  site_log_generate("Compose Whatsapp approve_template Page : ".$_SESSION['yjwatsp_user_name']." get the Service response [$response] on ".date("Y-m-d H:i:s"), '../');
+  
+  if ($header->response_code == 1) {
+    $json = array("status" => 1, "msg" => $header->response_msg);
+  } else {
+    $json = array("status" => 0, "msg" => "Save option Failed!!. Must fill all fields!!");
+  }
+}
+// Compose Whatsapp Page approve_template - Start
+
+//  approve page sender_id reject approve_qr_whatsappno - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "approve_qr_whatsappno") {
+  $whatspp_config_id1		= htmlspecialchars(strip_tags(isset($_REQUEST['whatspp_config_id']) ? $conn->real_escape_string($_REQUEST['whatspp_config_id']) : ""));
+  $approve_status1  		= htmlspecialchars(strip_tags(isset($_REQUEST['approve_status']) ? $conn->real_escape_string($_REQUEST['approve_status']) : ""));
+  
+  $replace_txt = '{
+    "user_id" : "'.$_SESSION['yjwatsp_user_id'].'",
+    "whatspp_config_status" : "'.$approve_status1.'",
+    "whatspp_config_id" : "'.$whatspp_config_id1.'"
+  }';
+    // To Get Api URL
+    $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].'';  
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => $api_url.'/list/approve_whatsappno',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS =>$replace_txt,
+    CURLOPT_HTTPHEADER => array(
+      $bearer_token,
+      'Content-Type: application/json'
+    ),
+  ));
+  site_log_generate("approve page sender_id reject Page : ".$_SESSION['yjwatsp_user_name']." Execute the service [$replace_txt] on ".date("Y-m-d H:i:s"), '../');
+  $response = curl_exec($curl);
+  curl_close($curl);
+  $sms = json_decode($response, false);
+  site_log_generate("approve page sender_id reject Page : ".$_SESSION['yjwatsp_user_name']." get the Service response [$response] on ".date("Y-m-d H:i:s"), '../');
+  
+  if ($sms->response_msg > 0) {
+    $json = array("status" => 1, "msg" => $sms->response_msg);
+  } else {
+    $json = array("status" => 0, "msg" => "Save option Failed!!. Must fill all fields!!");
+  }
+}
+// approve page sender_id reject approve_qr_whatsappno - End
+
+// Compose Whatsapp Page approve_whatsappno - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "approve_whatsappno") {
+  $whatspp_config_id1		= htmlspecialchars(strip_tags(isset($_REQUEST['whatspp_config_id']) ? $conn->real_escape_string($_REQUEST['whatspp_config_id']) : ""));
+  $approve_status1  		= htmlspecialchars(strip_tags(isset($_REQUEST['approve_status']) ? $conn->real_escape_string($_REQUEST['approve_status']) : ""));
+    
+    $replace_txt = '{
+      "user_id" : "'.$_SESSION['yjwatsp_user_id'].'",
+      "whatspp_config_status" : "'.$approve_status1.'",
+      "whatspp_config_id" : "'.$whatspp_config_id1.'"
+    }';
+   
+      // To Get Api URL
+    $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].'';  
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => $api_url.'/list/approve_whatsappno',
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'POST',
+      CURLOPT_POSTFIELDS =>$replace_txt,
+      CURLOPT_HTTPHEADER => array(
+        $bearer_token,
+        'Content-Type: application/json'
+      ),
+    ));
+    site_log_generate("Approve Whatsappno Page : ".$_SESSION['yjwatsp_user_name']." Execute the service [$replace_txt] on ".date("Y-m-d H:i:s"), '../');
+    $response = curl_exec($curl);
+    curl_close($curl);
+    $sms = json_decode($response, false);
+    site_log_generate("Approve Whatsappno Page : ".$_SESSION['yjwatsp_user_name']." get the Service response [$response] on ".date("Y-m-d H:i:s"), '../');
+    
+    if ($sms->response_msg  == 'Success') {
+      $json = array("status" => 1, "msg" =>  $yjresponseobj->reponse_msg );
+    }
+}
+// Compose Whatsapp Page approve_whatsappno - Start
+
+// All Page Footer find_blocked_senderid - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "find_blocked_senderid") {
+  $replace_txt = '{
+    "user_id" : "'.$_SESSION['yjwatsp_user_id'].'"
+  }';
+    // To Get Api URL
+  $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].''; 
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => $api_url.'/list/find_blocked_senderid',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'GET',
+    CURLOPT_POSTFIELDS =>$replace_txt,
+    CURLOPT_HTTPHEADER => array(
+      $bearer_token,
+      'Content-Type: application/json'
+    ),
+  ));
+  site_log_generate("All Footer Page : ".$_SESSION['yjwatsp_user_name']." Execute the service [$replace_txt] on ".date("Y-m-d H:i:s"), '../');
+  $response = curl_exec($curl);
+  curl_close($curl);
+  $sms = json_decode($response, false);
+  site_log_generate("All Footer Page : ".$_SESSION['yjwatsp_user_name']." get the Service response [$response] on ".date("Y-m-d H:i:s"), '../');
+
+  $sent_count_msg = '';	$ii = 0;
+  if ($sms->num_of_rows > 0) {
+    for($indicator = 0; $indicator < $sms->num_of_rows; $indicator++){
+      $ii++;
+      $wht_bearer_token = $sms->report[$indicator]->mobile_no;
+      $sent_count_msg .= $ii.") Sender ID : ".$sms->report[$indicator]->mobile_no.", <br>";
+    }
+  }
+
+  $sent_count_msg = rtrim($sent_count_msg, ",  <br>");
+  if ($sent_count_msg != '') {
+    $json = array("status" => 1, "msg" => $sent_count_msg);
+  } else {
+    $json = array("status" => 0, "msg" => "0");
+  }
+}
+// All Page Footer find_blocked_senderid - Start
+
+// Messenger Reply Page messenger_reply - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "messenger_reply") {
+  site_log_generate("Messenger Reply Page : User : ".$_SESSION['yjwatsp_user_name']." access this page on ".date("Y-m-d H:i:s"), '../');
+
+  $txt_reply				= htmlspecialchars(strip_tags(isset($_REQUEST['txt_reply']) ? $conn->real_escape_string($_REQUEST['txt_reply']) : ""));
+  $receiver_mobile	= htmlspecialchars(strip_tags(isset($_REQUEST['message_to']) ? $conn->real_escape_string($_REQUEST['message_to']) : ""));
+  $sender_id				= htmlspecialchars(strip_tags(isset($_REQUEST['sender_id']) ? $conn->real_escape_string($_REQUEST['sender_id']) : ""));
+  $message_from		= htmlspecialchars(strip_tags(isset($_REQUEST['message_from']) ? $conn->real_escape_string($_REQUEST['message_from']) : ""));
+
+  $send_reply = '{
+    "user_id":"'.$_SESSION['yjwatsp_user_id'].'",
+    "sender_mobile":"'.$sender_id.'",
+    "receiver_mobile":"'.$message_to.'",
+    "reply_msg":"'.$txt_reply.'"
+  }';
+  site_log_generate("Messenger Reply Page : User : ".$_SESSION['yjwatsp_user_name']." reply [$send_reply] on ".date("Y-m-d H:i:s"), '../');
+  // exit;
+  // To Get Api URL
+  $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].''; 
+  $curl = curl_init();
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => $api_url."/message/reply_message",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS =>'{
+      "user_id":"'.$_SESSION['yjwatsp_user_id'].'",
+      "sender_mobile":"'.$sender_id.'",
+      "receiver_mobile":"'.$message_to.'",
+      "reply_msg":"'.$txt_reply.'"
+    }',
+    CURLOPT_HTTPHEADER => array(
+      $bearer_token,
+      'Content-Type: application/json'
+    ),
+  ));
+  $response = curl_exec($curl);
+  site_log_generate("Messenger Reply Page : User : ".$_SESSION['yjwatsp_user_name']." reply reseponse [$response] on ".date("Y-m-d H:i:s"), '../');
+  curl_close($curl);
+  $yjresponseobj = json_decode($response, false);
+  
+  if($yjresponseobj->response_status == 200) {
+    $json = array("status" => 1, "msg" => $yjresponseobj->response_msg);
+  } else {
+    $json = array("status" => 0, "msg" => "Failed while saving the Reply!!");
+  }
+}
+// Messenger Reply Page messenger_reply - Start
+
+// Compose Whatsapp Page compose_whatsapp - Start
+if($_SERVER['REQUEST_METHOD'] == "POST" and $tmpl_call_function == "compose_whatsapp") {
+  site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." access this page on ".date("Y-m-d H:i:s"), '../');
+  
+  // Get data
+  $txt_list_mobno 				= htmlspecialchars(strip_tags(isset($_REQUEST['txt_list_mobno']) ? $_REQUEST['txt_list_mobno'] : ""));
+
+  $chk_remove_duplicates	= htmlspecialchars(strip_tags(isset($_REQUEST['chk_remove_duplicates']) ? $_REQUEST['chk_remove_duplicates'] : ""));
+  $chk_remove_invalids		= htmlspecialchars(strip_tags(isset($_REQUEST['chk_remove_invalids']) ? $_REQUEST['chk_remove_invalids'] : ""));
+  $id_slt_contgrp					= htmlspecialchars(strip_tags(isset($_REQUEST['id_slt_contgrp']) ? $_REQUEST['id_slt_contgrp'] : "0"));
+  $txt_sms_type    				= htmlspecialchars(strip_tags(isset($_REQUEST['txt_sms_type']) ? $_REQUEST['txt_sms_type'] : "TEXT"));
+  $txt_sms_type         	= strtoupper($txt_sms_type);
+  $country_code						= '';
+  $mime_type							= '';
+
+  $filename = '';
+    if($_FILES['txt_media']['name'] != '') {
+      $path_parts = pathinfo($_FILES["txt_media"]["name"]);
+      $extension = $path_parts['extension'];
+
+      $filename = $_SESSION['yjwatsp_user_id']."_".$milliseconds.".".$extension;
+      /* Location */
+      $location = "../uploads/whatsapp_media/".$filename;
+      $send_location = $full_pathurl."/uploads/whatsapp_media/".$filename;
+      $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
+      $imageFileType = strtolower($imageFileType);
+      
+      switch($imageFileType) {
+        case 'jpg':
+        case 'jpeg':
+          $mime_type = "image/jpeg";
+          break;
+        case 'png':
+          $mime_type = "image/png";
+          break;
+        case 'gif':
+          $mime_type = "image/gif";
+          break;
+          
+        case 'pdf':
+          $mime_type = "application/pdf";
+          break;
+        case 'mp4':
+          $mime_type = "video/mp4";
+          break;
+        case 'webm':
+          $mime_type = "video/webm";
+          break;
+      }
+
+      /* Valid extensions */
+      $valid_extensions = array("jpg","jpeg","png","pdf","gif","mp4","webm");
+
+      $rspns = '';
+      /* Check file extension */
+      if(move_uploaded_file($_FILES['txt_media']['tmp_name'], $location)){
+          site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." whatsapp_media file moved into Folder on ".date("Y-m-d H:i:s"), '../');
+      }
+    } else {
+      $filename = '';
+    }
+// To Get Data
+  $txt_sms_content			= htmlspecialchars(strip_tags(isset($_REQUEST['txt_sms_content']) ? $_REQUEST['txt_sms_content'] : ""));
+  $txt_caption 						= htmlspecialchars(strip_tags(isset($_REQUEST['txt_caption']) ? $_REQUEST['txt_caption'] : "Media"));
+  $txt_char_count 				= htmlspecialchars(strip_tags(isset($_REQUEST['txt_char_count']) ? $_REQUEST['txt_char_count'] : "1"));
+  $txt_sms_count 	        = htmlspecialchars(strip_tags(isset($_REQUEST['txt_sms_count']) ? $_REQUEST['txt_sms_count'] : "1"));
+  $txt_rcscard_title			= htmlspecialchars(strip_tags(isset($_REQUEST['txt_rcscard_title']) ? $_REQUEST['txt_rcscard_title'] : ""));
+    
+  $chk_save_contact_group	= htmlspecialchars(strip_tags(isset($_REQUEST['chk_save_contact_group']) ? $_REQUEST['chk_save_contact_group'] : ""));
+  
+  $expl_wht = explode("~~", $txt_whatsapp_mobno[0]); 
+  $storeid = $expl_wht[0];
+  $confgid = $expl_wht[1];
+
+  $txt_caption = str_replace("'", "\'", $txt_caption);
+  $txt_caption = str_replace('"', '\"', $txt_caption);
+
+    // Receiver Mobile Numbers
+    $newline1 = explode("\n", $txt_list_mobno); 
+    $receive_mobile_nos = '';
+    $cnt_mob_no = count($newline1);
+    for ($i1=0; $i1 < count($newline1); $i1++) { 
+        $expl1 = explode(",", $newline1[$i1]);
+        for ($ij1=0; $ij1 < count($expl1); $ij1++) { 
+            if(validate_phone_number($expl1[$ij1])) {
+                $mblno[] = $expl1[$ij1];
+                $receive_mobile_nos .= $expl1[$ij1].',';
+            }
+        }
+    }
+    $receive_mobile_nos = rtrim($receive_mobile_nos, ",");
+
+    // Sender Mobile Numbers
+    $sender_mobile_nos = '';
+    for ($i1=0; $i1 < count($txt_whatsapp_mobno); $i1++) { 
+        $ex1 = explode('~~', $txt_whatsapp_mobno[$i1]);
+        $sender_mobile_nos .= $ex1[2].',';
+    }
+    $sender_mobile_nos = rtrim($sender_mobile_nos, ",");
+
+    $txt_sms_content = substr($txt_sms_content, 0, 700);
+    if(strlen($txt_sms_content) != mb_strlen($txt_sms_content, 'utf-8'))
+    {
+        // echo "Please enter English words only:("; 
+        $txt_char_count     = mb_strlen($txt_sms_content, 'utf-8');
+        $txt_sms_count      = ceil($txt_char_count / 70);
+    }
+    else {
+        // echo "OK, English Detected!";
+        $txt_char_count     = strlen($txt_sms_content);
+        $txt_sms_count      = ceil($txt_char_count / 160);
+    }
+
+    $usr_id = $_SESSION['yjwatsp_user_id'];
+
+    $replace_txt = '{
+      "user_id" : "'.$usr_id.'"
+    }';
+      // To Get Api URL
+    $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].''; 
+    $curl = curl_init();
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => $api_url."/list/available_credits",
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'GET',
+      CURLOPT_POSTFIELDS =>'{
+        "user_id":"'.$_SESSION['yjwatsp_user_id'].'",
+        "sender_mobile":"'.$sender_id.'",
+        "receiver_mobile":"'.$receiver_mobile.'",
+        "reply_msg":"'.$txt_reply.'"
+      }',
+      CURLOPT_HTTPHEADER => array(
+        $bearer_token,
+        'Content-Type: application/json'
+      ),
+    ));
+
+    site_log_generate("Compose Whatsapp Page : ".$_SESSION['yjwatsp_user_name']." Execute the service [$replace_txt] on ".date("Y-m-d H:i:s"), '../');
+    $response = curl_exec($curl);
+    curl_close($curl);
+    $header = json_decode($response, false);
+    site_log_generate("Compose Whatsapp Page : ".$_SESSION['yjwatsp_user_name']." get the Service response [$response] on ".date("Y-m-d H:i:s"), '../');
+    
+    if ($header->num_of_rows > 0) {
+      for($indicator = 0; $indicator < $header->num_of_rows; $indicator++){
+        $alotsms = $header->report[$indicator]->available_messages;
+        $expdate = date("Y-m-d H:i:s", strtotime($header->report[$indicator]->expiry_date));
+      }
+    } else {
+        $alotsms = 0;
+        $expdate = '';
+    }
+
+    $ttlmsgcnt = 0;
+    if($txt_sms_content != '') {
+      $ttlmsgcnt++;
+    }
+    if($filename != '') { // echo "}}";
+      $ttlmsgcnt++;
+    }
+    if($txt_open_url != '' or $txt_call_button != '' or (count($txt_reply_buttons) > 0 and $txt_reply_buttons[0] != '')) {
+      $ttlmsgcnt++;
+    }
+    if(count($txt_option_list) > 0 and $txt_option_list[0] != '') {
+      $ttlmsgcnt++;
+    }
+    
+    $ttl_sms_cnt = count($mblno);
+    $txt_sms_content = str_replace("'", "\'", $txt_sms_content);
+    $txt_sms_content = str_replace('"', '\"', $txt_sms_content);
+    
+    if($alotsms == 0 and $_SESSION['yjwatsp_user_master_id'] != 1) {
+        site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." Compose Whatsapp failed [Whatsapp Credits are not available..] on ".date("Y-m-d H:i:s"), '../');
+        $json = array("status" => 0, "msg" => "Whatsapp Credits are not available. Kindly verify!!");
+    }
+    elseif($alotsms < $ttl_sms_cnt and $_SESSION['yjwatsp_user_master_id'] != 1) {
+        site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." Compose Whatsapp failed [Whatsapp Credits are not available.] on ".date("Y-m-d H:i:s"), '../');
+        $json = array("status" => 0, "msg" => "Whatsapp Credits are not available. Kindly verify!!");
+    }
+    elseif($txt_char_count > 700) {
+        site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." Compose Whatsapp failed [Morethan 700 characters are not allowed for Whatsapp] on ".date("Y-m-d H:i:s"), '../');
+        $json = array("status" => 0, "msg" => "Morethan 700 characters are not allowed for Whatsapp. Kindly verify!!");
+    }
+    elseif($expdate == '' and $_SESSION['yjwatsp_user_master_id'] != 1) {
+        site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." Compose Whatsapp failed [Validity Period Expired.] on ".date("Y-m-d H:i:s"), '../');
+        $json = array("status" => 0, "msg" => "Validity Period Expired. Kindly verify!");
+    }
+    elseif(strtotime($expdate) < strtotime($current_date) and $_SESSION['yjwatsp_user_master_id'] != 1) {
+        site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." Compose Whatsapp failed [Validity Period Expired..] on ".date("Y-m-d H:i:s"), '../');
+        $json = array("status" => 0, "msg" => "Validity Period Expired. Kindly verify!!");
+    } else {
+
+      
+            $update_txt = '';
+            // Send Whatsapp Message - Start
+            // Media Messages - Start
+            if($filename != '') {
+              $update_txt .= '{
+                "msg_type" : "media",
+                "media_file" : "'.$send_location.'",
+                "file_name" : "'.$filename.'",
+                "media_caption" : "'.$txt_caption.'"
+              },';
+              site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." executed the text [$update_txt] on ".date("Y-m-d H:i:s"), '../');
+            }
+            // Media Messages - End
+
+            // TEXT Messages - Start
+            $txt_sms_content = str_replace("\'", "'", $txt_sms_content);
+            $update_txt .= '{
+              "msg_type" : "text",
+              "text_msg" : "'.base64_encode($txt_sms_content).'"
+            },';
+            site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." executed the text [$update_txt] on ".date("Y-m-d H:i:s"), '../');
+            // TEXT Messages - End
+
+            // Button Messages (URL & CALL & REPLY) - Start
+            if($txt_open_url != '' and $txt_call_button != '' and (count($txt_reply_buttons) > 0 and $txt_reply_buttons[0] != '')) {
+              $update_txt .= '{
+                "msg_type" : "button",';
+              $update_txt .= '
+                "btn_content" : "'.$txt_open_url_data.'",
+                "url_btn" : "'.$txt_open_url.'",
+                "url_text" : "'.$txt_open_url_data.'",';
+
+              $update_txt .= '
+                "call_btn" : "+91'.$txt_call_button.'",
+                "call_text" : "'.$txt_call_button_data.'",';
+
+              $opt = ''; $tsr_ii = 0;
+              for($tsr_i = 0; $tsr_i < count($txt_reply_buttons); $tsr_i++) {
+                $tsr_ii++;
+                $opt .= '"reply_btn'.$tsr_ii.'" : "'.$txt_reply_buttons[$tsr_i].'",';								
+              }
+              $opt = rtrim($opt, ",");
+
+              $update_txt .= '{
+                "msg_type" : "button",
+                "btn_content" : "Reply",
+                '.$opt.'
+              },';
+
+              $update_txt = rtrim($update_txt, ",");
+              $update_txt .= '},';
+
+              // Button Messages (URL & CALL & REPLY) - End
+            } else {
+              // Button Messages (URL) - Start
+              if($txt_open_url != '' or $txt_call_button != '') {
+                $update_txt .= '{
+                  "msg_type" : "button",';
+              }
+              if($txt_open_url != '') {
+                $update_txt .= '
+                  "btn_content" : "'.$txt_open_url_data.'",
+                  "url_btn" : "'.$txt_open_url.'",
+                  "url_text" : "'.$txt_open_url_data.'",';
+              }
+              // Button Messages (URL) - End
+
+              // Button Messages (CALL) - Start
+              if($txt_call_button != '') {
+                $update_txt .= '
+                  "call_btn" : "+91'.$txt_call_button.'",
+                  "call_text" : "'.$txt_call_button_data.'",';
+              }
+              if($txt_open_url != '' or $txt_call_button != '') {
+                $update_txt = rtrim($update_txt, ",");
+
+                $update_txt .= '},';
+                site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." executed the text [$update_txt] on ".date("Y-m-d H:i:s"), '../');
+              }
+              // Button Messages (CALL) - Start
+
+              // Button Messages (REPLY) - Start
+              if(count($txt_reply_buttons) > 0 and $txt_reply_buttons[0] != '') {
+                $opt = ''; $tsr_ii = 0;
+                for($tsr_i = 0; $tsr_i < count($txt_reply_buttons); $tsr_i++) {
+                  $tsr_ii++;
+                  $opt .= '"reply_btn'.$tsr_ii.'" : "'.$txt_reply_buttons[$tsr_i].'",';								
+                }
+                $opt = rtrim($opt, ",");
+
+                $update_txt .= '{
+                  "msg_type" : "button",
+                  "btn_content" : "Reply",
+                  '.$opt.'
+                },';
+                site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." executed the text [$update_txt] on ".date("Y-m-d H:i:s"), '../');
+              }
+              // Button Messages (REPLY) - End
+            }
+            
+            // List Messages - Start
+            if(count($txt_option_list) > 0 and $txt_option_list[0] != '') {
+              $opt1 = '';
+              for($tsr_i = 0; $tsr_i < count($txt_option_list); $tsr_i++) {
+                $opt1 .= '{
+                  "id": "'.strtolower($txt_option_list[$tsr_i]).'", "title": "'.$txt_option_list[$tsr_i].'"
+                },';
+              }
+              $opt1 = rtrim($opt1, ",");
+
+              $update_txt .= '{
+                "msg_type" : "list",
+                "title" : "Select",
+                "body" : "Deals",
+                "btn_text" : "View",
+                "list_title" : "List", 
+                "list_items" : [
+                    '.$opt1.'
+                ]
+              },';
+            }
+            $update_txt = rtrim($update_txt, ",");
+            site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." executed the text [$update_txt] on ".date("Y-m-d H:i:s"), '../');
+            // List Messages - End
+
+            $sendto_api = '{
+              "api_key":"'.$_SESSION['yjwatsp_api_key'].'",
+              "sender_numbers":['.$sender_mobile_nos.'],
+              "mobile_numbers":['.$receive_mobile_nos.'],
+              "messages" : [
+                  '.$update_txt.'
+                ]
+              }';
+              site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." api send text [$sendto_api] on ".date("Y-m-d H:i:s"), '../');
+            // exit;
+  // To Get Api URL
+            $bearer_token = 'Authorization: '.$_SESSION['yjwatsp_bearer_token'].''; 
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+              CURLOPT_URL => $watsp_msg_url.'/send_msg',
+              CURLOPT_RETURNTRANSFER => true,
+              CURLOPT_ENCODING => '',
+              CURLOPT_MAXREDIRS => 10,
+              CURLOPT_TIMEOUT => 0,
+              CURLOPT_FOLLOWLOCATION => true,
+              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+              CURLOPT_CUSTOMREQUEST => 'GET',
+              CURLOPT_POSTFIELDS => $sendto_api,
+              CURLOPT_HTTPHEADER => array(
+                $bearer_token,
+                "cache-control: no-cache",
+                'Content-Type: application/json;charset=utf-8'
+              ),
+            ));
+
+            $response = curl_exec($curl);
+            curl_close($curl);
+            $respobj = json_decode($response);
+            // echo $response;
+
+              site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." api response [$response] on ".date("Y-m-d H:i:s"), '../');
+
+            $rsp_id = $respobj->response_status;
+            if($rsp_id == 203) {
+              $json = array("status" => 1, "msg" => $respobj->response_msg);
+              site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." [$respobj->response_msg] on ".date("Y-m-d H:i:s"), '../');
+            }
+            if($rsp_id == 403) {
+              $json = array("status" => 2, "msg" => "Invalid User, Kindly try with valid User!!");
+              site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." [Invalid User, Kindly try with valid User!!] on ".date("Y-m-d H:i:s"), '../');
+            } elseif($rsp_id == 201) {
+              $json = array("status" => 0, "msg" => "Failure");
+              site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." [Failure] on ".date("Y-m-d H:i:s"), '../');
+            } else {
+              $json = array("status" => 1, "msg" => "Success");
+              site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." [Success] on ".date("Y-m-d H:i:s"), '../');
+            }
+            // echo "@@";
+    }
+    site_log_generate("Compose Whatsapp Page : User : ".$_SESSION['yjwatsp_user_name']." newconn new db connection closed on ".date("Y-m-d H:i:s"), '../');
+}
+
+// Compose Whatsapp Page compose_whatsapp - End
+
+// Finally Close all Opened Mysql DB Connection
+$conn->close();
+
+// Output header with JSON Response
+header('Content-type: application/json');
+echo json_encode($json);
+
+

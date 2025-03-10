@@ -1,0 +1,139 @@
+[
+    { 
+   "id": "1",
+   "parent": [
+          "0"
+  ],
+  "pattern": "/Start/",
+  "type": ["text"],
+  "message": [
+    {
+            "type": "text",
+            "text": {
+                    "body": "Enter Your Phone Number"
+            }
+    }
+   ],
+  "restart": [
+   {
+       "type": "text",
+       "text": {
+           "body": "Restart"
+       }
+   }
+],
+"invalid": [
+   {
+       "type": "text",
+       "text": {
+           "body": "Invalid"
+       }
+   }
+]
+}, { 
+   "id": "2",
+   "parent": [
+     "1"
+  ],   
+  "pattern": "//^+91(7\d|8\d|9\d)\d{9}$//",
+  "type":["text"],
+  "message": [
+   {
+       "type": "interactive",
+       "interactive": {
+           "type": "button",
+           "body": { 
+               "text": "are you interested in choosing food items?"
+           },
+           "action": {
+             "buttons":[{
+        "type": "reply",
+        "reply": {
+            "id": "yes",
+            "title":"yes"
+        }
+       },{
+        "type": "reply",
+        "reply": {
+            "id": "No",
+            "title":"No"
+        }
+       }
+       ] 
+   }
+ }
+}
+]
+}, { 
+     "id": "3",
+     "parent": [
+       "2"
+    ],
+    "pattern": "/hyd special food items/",
+    "type": ["text"],
+    "message": [
+     {
+         "type": "interactive",
+         "interactive": {
+             "type": "list",
+             "body": {
+                 "text":  "Hyderabad is a city known for its rich history and culture, as well as its delicious cuisine. From spicy and savory to sweet and tangy, the street food in Hyderabad offers a wide variety of flavors and textures. Hyderabadi food offers an array of flavors and textures. "
+             },
+             "action": {
+               "button": "must select one",
+               "sections":[{
+           "rows": [
+           {
+          "type": "reply",
+          "reply": {
+              "id": "Hyderabadi Biryani",
+              "title":"Hyderabadi Biryani"
+          }
+         },{
+          "type": "reply",
+          "reply": {
+              "id": " Haleem",
+              "title":" Haleem"
+          }
+         },{
+          "type": "reply",
+          "reply": {
+              "id": "Kebabs",
+              "title":"Kebabs"
+          }
+         },{
+          "type": "reply",
+          "reply": {
+              "id": "Dosa",
+              "title":"Dosa"
+          }
+         },{
+          "type": "reply",
+          "reply": {
+              "id": "Qubani ka Meetha",
+              "title":"Qubani ka Meetha"
+          }
+         }
+           ]
+         }] 
+     }
+     }
+         
+     }
+ ]
+   }, { 
+       "id": "4",
+       "parent": [
+              "3"
+      ],
+      "pattern": "/interactive/",
+      "type": ["text"],
+      "message": [
+        {
+                "type": "text",
+                "text": {
+                        "body": "thank you for choosing Food Items"
+                }
+        }
+       ]
+       }]{"status":1,"msg":"success"}
